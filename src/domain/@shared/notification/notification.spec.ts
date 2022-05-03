@@ -65,5 +65,4 @@ describe("Unit tests for notifications", () => {
 
         expect(notification.getErrors()).toEqual([error]);
     });
-
 });

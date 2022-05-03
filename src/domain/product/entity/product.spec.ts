@@ -8,7 +8,7 @@ describe("Product unit tests", () => {
 
             const product = new Product("", "Product 1", 100);
 
-        }).toThrowError("Id is required");
+        }).toThrowError("product: Id is required");
 
     });
 
@@ -18,7 +18,7 @@ describe("Product unit tests", () => {
 
             const product = new Product("1", "", 100);
 
-        }).toThrowError("Name is required");
+        }).toThrowError("product: Name is required");
 
     });
 
@@ -28,7 +28,7 @@ describe("Product unit tests", () => {
 
             const product = new Product("1", "Name", -1);
 
-        }).toThrowError("Price must be greater than zero");
+        }).toThrowError("product: Price must be greater than zero");
 
     });
 

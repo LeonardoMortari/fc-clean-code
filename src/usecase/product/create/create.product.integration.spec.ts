@@ -1,4 +1,5 @@
 import { Sequelize } from "sequelize-typescript";
+import Notification from "../../../domain/@shared/notification/notification";
 import Product from "../../../domain/product/entity/product";
 import ProductModel from "../../../infrastructure/product/repository/sequelize/product.model";
 import ProductRepository from "../../../infrastructure/product/repository/sequelize/product.repository";
@@ -30,11 +31,9 @@ describe("Test find product use case", () => {
         const product = new Product("123", "Vinho Pérgola 1l", 21.47);
         await productRepository.create(product);
 
-       expect(product).toEqual({
-           _id: "123",
-           _name: "Vinho Pérgola 1l",
-           _price: 21.47,
-       });
+        const productResult = await productRepository.find(product.id);
+
+       expect(product).toEqual(productResult);
 
     });
 

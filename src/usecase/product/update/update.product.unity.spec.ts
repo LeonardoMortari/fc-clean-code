@@ -39,17 +39,4 @@ describe("Test unity update a product", () => {
             "Name is required"
         );
     });
-
-    it("should an error when price is less than zero", async() => {
-        const productRepository = mockRepository();
-        const productUseCase = new UpdateProducUseCase(productRepository);
-
-        input.name = "Coca Cola 2l";
-        input.price = -10;
-
-        await expect(productUseCase.execute(input)).rejects.toThrow(
-            "Price must be greater than zero"
-        );
-    });
-
 });
