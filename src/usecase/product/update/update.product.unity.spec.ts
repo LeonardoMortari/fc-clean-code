@@ -36,7 +36,7 @@ describe("Test unity update a product", () => {
         input.name = "";
 
         await expect(productUseCase.execute(input)).rejects.toThrow(
-            "Name is required"
+            "product: Name is required"
         );
     });
 });

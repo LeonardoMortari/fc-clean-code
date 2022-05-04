@@ -39,19 +39,7 @@ describe("", () => {
         input.name = "";
 
         await expect(productUseCase.execute(input)).rejects.toThrow(
-            "Name is required"
-        );
-    });
-
-    it("should an error when price is less than zero", async() => {
-        const productRepository = mockRepository();
-        const productUseCase = new CreateProductUseCase(productRepository);
-
-        input.name = "Coca Cola 350ml";
-        input.price = -10;
-
-        await expect(productUseCase.execute(input)).rejects.toThrow(
-            "Price must be greater than zero"
+            "product: Name is required"
         );
     });
 

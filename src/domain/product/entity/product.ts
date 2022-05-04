@@ -1,7 +1,7 @@
 import Entity from "../../@shared/entity/entity.abstract";
 import ProductInterface from "./product.interface";
 import NotificationError from "../../@shared/notification/notification.error";
-import ProdductValidatorFactory from "../factory/product.validator.factory";
+import ProductValidatorFactory from "../factory/product.validator.factory";
 
 export default class Product extends Entity implements ProductInterface {
 
@@ -47,7 +47,7 @@ export default class Product extends Entity implements ProductInterface {
     }
 
     validate() {
-        ProdductValidatorFactory.create().validate(this);
+        ProductValidatorFactory.create().validate(this);
     }
 
 }
